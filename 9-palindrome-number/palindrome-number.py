@@ -4,6 +4,21 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
-        if x < 0:
+        if x < 0 or (x % 10 == 0 and x != 0):
             return False
-        return str(x) == str(x)[::-1]
+        reverserd_half = 0
+        while x > reverserd_half :
+            digit = x % 10 
+            x = x // 10 
+            reverserd_half = reverserd_half *10 + digit
+        return x == reverserd_half or x == reverserd_half//10
+
+# class Solution(object):
+#     def isPalindrome(self, x):
+#         """
+#         :type x: int
+#         :rtype: bool
+#         """
+#         if x < 0:
+#             return False
+#         return str(x) == str(x)[::-1]
