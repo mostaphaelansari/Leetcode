@@ -25,7 +25,7 @@ Each problem solution is stored in its own directory, named with the problem num
 | 217 | [Contains Duplicate](Python/217-contains-duplicate) | [Java](Python/217-contains-duplicate/contains-duplicate.java) | Easy |
 | 242 | [Valid Anagram](Python/242-valid-anagram) | [Python](Python/242-valid-anagram/valid-anagram.py) | Easy |
 | 1524 | [String Matching in an Array](Python/1524-string-matching-in-an-array) | [Go](Python/1524-string-matching-in-an-array/string-matching-in-an-array.go) | Easy |
-
+| 1470 | [Tweet-counts-per-frequency](Python/1470-tweet-counts-per-frequency) | [Python](Python/21470-tweet-counts-per-frequency.py) | Medium |
 ## SQL Solutions
 
 | # | Problem | Solution | Difficulty |
