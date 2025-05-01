@@ -1,8 +1,9 @@
 class Solution:
     def largestSumAfterKNegations(self, nums: List[int], k: int) -> int:
-        d={}
+        
         for i in range(k):
-            minimum = min(nums)
+            nums.sort()
+            minimum = nums[0]
             index = nums.index(minimum)
             nums[index] = -nums[index]
         return sum(nums)
