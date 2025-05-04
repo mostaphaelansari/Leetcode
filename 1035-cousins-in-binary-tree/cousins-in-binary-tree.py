@@ -10,28 +10,36 @@ class TreeNode:
 
 class Solution:
     def isCousins(self, root: Optional[TreeNode], x: int, y: int) -> bool:
-        queue = deque([(root, None)])  # queue of (node, parent)
-
-        while queue:
-            x_parent = y_parent = None
-            level_size = len(queue)
-
-            for _ in range(level_size):
-                node, parent = queue.popleft()
-
+        if not root:
+            return False
+        
+        q = deque([root])
+        
+        while q:
+            size = len(q)
+            foundX = foundY = False
+            
+            for _ in range(size):
+                node = q.popleft()
+                
                 if node.val == x:
-                    x_parent = parent
+                    foundX = True
                 if node.val == y:
-                    y_parent = parent
+                    foundY = True
+
+                if node.left and node.right:
+                    if (node.left.val == x and node.right.val == y) or \
+                       (node.left.val == y and node.right.val == x):
+                        return False
 
                 if node.left:
-                    queue.append((node.left, node))
+                    q.append(node.left)
                 if node.right:
-                    queue.append((node.right, node))
-
-            if x_parent and y_parent:
-                return x_parent != y_parent
-            if x_parent or y_parent:
+                    q.append(node.right)
+            
+            if foundX and foundY:
+                return True
+            if foundX or foundY:
                 return False
-
+        
         return False
