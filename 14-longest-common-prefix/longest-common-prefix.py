@@ -5,12 +5,13 @@ class Solution:
         if not strs:
             return ""
         
-        # Start by assuming the whole first string is the prefix
+        # Commence avec le premier mot comme préfixe
         prefix = strs[0]
         
-        for string in strs[1:]:
-            # Shrink the prefix until it's a prefix of string
-            while not string.startswith(prefix):
+        # Compare le préfixe avec chaque mot dans la liste
+        for word in strs[1:]:
+            while not word.startswith(prefix):
+                # Réduit le préfixe d’un caractère à la fois
                 prefix = prefix[:-1]
                 if not prefix:
                     return ""
