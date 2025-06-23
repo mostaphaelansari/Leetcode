@@ -12,7 +12,7 @@ The repository is organized into two main directories:
 Each problem solution is stored in its own directory, named with the problem number and title (e.g., `1-two-sum`). Each problem directory typically includes:
 
 - A detailed README.md with the problem description
-- The solution file(s) in the appropriate language (Python, Java, SQL, Go, etc.)
+- The solution file(s) in the appropriate language (Python, Java, SQL, Go,)
 
 ## Python Solutions
 
