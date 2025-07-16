@@ -4,21 +4,17 @@ class Solution:
             return False
 
         vowels = set('aeiouAEIOU')
-        consonants = set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') - vowels
-        
-        has_vowel = False
-        has_consonant = False
-        
+        has_vowel = has_consonant = False
+
         for ch in word:
             if ch.isdigit():
                 continue
-            elif ch.isalpha():
-                if ch in vowels:
-                    has_vowel = True
-                elif ch in consonants:
-                    has_consonant = True
-            else:
-                # Invalid character found
+            if not ch.isalpha():  # Reject any non-alphanumeric character
                 return False
-        
+            lower_ch = ch.lower()
+            if lower_ch in 'aeiou':
+                has_vowel = True
+            else:
+                has_consonant = True
+
         return has_vowel and has_consonant
